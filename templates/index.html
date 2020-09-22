@@ -1,0 +1,271 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CURRENCY
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+        <table>
+            <tr>
+                <th>STERLİN/TL</th>
+                <th>EURO/TL</th>
+                <th>DOLAR/TL</th>
+
+            </tr>
+            <tr>
+                <td>{{datasss["rates"]["TRY"]}}</td>
+                <td>{{datas["rates"]["TRY"]}}</td>
+                <td>{{datass["rates"]["TRY"]}}</td>
+
+
+            </tr>
+        </table>
+        <br>
+        <h4>BAZ ALINACAK PARA BİRİMİ</h4>
+
+    <form action="{{ url_for('index') }}" method="post">
+            <select class="form-control" name="currency" id="currency">
+                <option value="AUD">AUD</option>
+                <option value="BGN">BGN</option>
+                <option value="BRL">BRL</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="HKD">HKD</option>
+                <option value="HRK">HRK</option>
+                <option value="HUF">HUF</option>
+                <option value="IDR">IDR</option>
+                <option value="ILS">ILS</option>
+                <option value="INR">INR</option>
+                <option value="ISK">ISK</option>
+                <option value="JPY">JPY</option>
+                <option value="KRW">KRW</option>
+                <option value="MYR">MYR</option>
+                <option value="MXN">MXN</option>
+                <option value="MOK">MOK</option>
+                <option value="NZD">NZD</option>
+                <option value="PHP">PHP</option>
+                <option value="PLN">PLN</option>
+                <option value="RON">RON</option>
+                <option value="RUB">RUB</option>
+                <option value="SEK">SEK</option>
+                <option value="SGD">SGD</option>
+                <option value="THB">THB</option>
+                <option value="TRY" selected>TRY</option>
+                <option value="USD">USD</option>
+                <option value="ZAR">ZAR</option>
+            </select>
+
+        <div class="form-group">
+            <button class="btn btn-primary" onclick='document.getElementById("currency").innerHTML = selected'>Submit</button>
+        </div>
+        </form>
+
+        <br>
+<h4>SEÇİLEN PARA BİRİMİ</h4>
+            <table>
+                <tr>
+      <th>PARA BİRİMİ</th><th>PARA DEĞERİ</th>
+  </tr>
+
+    <tr>
+    <td>{{currency}}</td>
+    <td>1.0</td>
+  </tr>
+            </table>
+        <br>
+
+        <h1>PARA BİRİMİ VE ÜLKELER</h1>
+<table>
+  <tr>
+    <th>PARA BİRİMİ</th>
+    <th>ÜLKE</th>
+      <th>PARA DEĞERİ</th>
+  </tr>
+
+    <tr>
+    <td>AUD</td>
+    <td>Avustralya Doları</td>
+        <td>{{data["rates"]["AUD"]}}</td>
+  </tr>
+
+  <tr>
+    <td>BGN</td>
+    <td>Bulgar Levası</td>
+      <td>{{data["rates"]["BGN"]}}</td>
+  </tr>
+  <tr>
+    <td>BRL</td>
+    <td>Brezilya Reali</td>
+      <td>{{data["rates"]["BRL"]}}</td>
+
+  </tr>
+  <tr>
+    <td>CAD</td>
+    <td>Kanada Doları</td>
+<td>{{data["rates"]["CAD"]}}</td>
+  </tr>
+  <tr>
+    <td>CHF</td>
+    <td>İsviçre Frangı</td>
+<td>{{data["rates"]["CHF"]}}</td>
+  </tr>
+    <tr>
+    <td>CNY</td>
+    <td>Çin Yuanı</td>
+        <td>{{data["rates"]["CNY"]}}</td>
+  </tr>
+  <tr>
+    <td>CZK</td>
+    <td>Çek Korunası</td>
+<td>{{data["rates"]["CZK"]}}</td>
+  </tr>
+  <tr>
+    <td>DKK</td>
+    <td>Danimarka Kronu</td>
+      <td>{{data["rates"]["DKK"]}}</td>
+  </tr>
+    <tr>
+    <td>EUR</td>
+    <td>Euro</td>
+        <td>{{data["rates"]["EUR"]}}</td>
+  </tr>
+    <tr>
+    <td>GBP</td>
+    <td>İngiliz Sterlini</td>
+        <td>{{data["rates"]["GBP"]}}</td>
+  </tr>
+
+    <tr>
+    <td>HKD</td>
+    <td>Hong Kong Doları</td>
+        <td>{{data["rates"]["HKD"]}}</td>
+  </tr>
+    <tr>
+    <td>HRK</td>
+    <td>Hırvatistan Kunası</td>
+        <td>{{data["rates"]["HRK"]}}</td>
+  </tr>
+    <tr>
+    <td>HUF</td>
+    <td>Macar Forinti</td>
+        <td>{{data["rates"]["HUF"]}}</td>
+  </tr>
+    <tr>
+    <td>IDR</td>
+    <td>Endonezya Rupisi</td>
+        <td>{{data["rates"]["IDR"]}}</td>
+  </tr>
+    <tr>
+    <td>ILS</td>
+    <td>Yeni İsrail Şekeli</td>
+        <td>{{data["rates"]["ILS"]}}</td>
+  </tr>
+    <tr>
+    <td>INR</td>
+    <td>Hindistan Rupisi</td>
+        <td>{{data["rates"]["INR"]}}</td>
+  </tr>
+    <tr>
+    <td>ISK</td>
+    <td>İzlanda Kronu</td>
+        <td>{{data["rates"]["ISK"]}}</td>
+  </tr>
+    <tr>
+    <td>JPY</td>
+    <td>Japon Yeni</td>
+        <td>{{data["rates"]["JPY"]}}</td>
+  </tr>
+    <tr>
+    <td>KRW</td>
+    <td>Güney Kore Wonu</td>
+        <td>{{data["rates"]["KRW"]}}</td>
+  </tr>
+    <tr>
+    <td>MYR</td>
+    <td>Malezya Ringgiti</td>
+        <td>{{data["rates"]["MYR"]}}</td>
+  </tr>
+    <tr>
+    <td>MXN</td>
+    <td>Meksika Pesosu</td>
+        <td>{{data["rates"]["MXN"]}}</td>
+  </tr>
+    <tr>
+    <td>NOK</td>
+    <td>Norveç Kronu</td>
+        <td>{{data["rates"]["NOK"]}}</td>
+  </tr>
+    <tr>
+    <td>NZD</td>
+    <td>Yeni Zelanda Doları</td>
+        <td>{{data["rates"]["NZD"]}}</td>
+  </tr>
+    <tr>
+    <td>PHP</td>
+    <td>Filipin Pesosu</td>
+        <td>{{data["rates"]["PHP"]}}</td>
+  </tr>
+    <tr>
+    <td>PLN</td>
+    <td>Polonya Zlotisi</td>
+        <td>{{data["rates"]["PLN"]}}</td>
+  </tr>
+    <tr>
+    <td>RON</td>
+    <td>Rumen Leyi</td>
+        <td>{{data["rates"]["RON"]}}</td>
+  </tr>
+    <tr>
+    <td>RUB</td>
+    <td>Rus Rublesi</td>
+        <td>{{data["rates"]["RUB"]}}</td>
+  </tr>
+    <tr>
+    <td>SEK</td>
+    <td>İsveç Kronu</td>
+        <td>{{data["rates"]["SEK"]}}</td>
+  </tr>
+    <tr>
+    <td>SGD</td>
+    <td>Singapur Doları</td>
+        <td>{{data["rates"]["SGD"]}}</td>
+  </tr>
+    <tr>
+    <td>THB</td>
+    <td>Tayland Bahtı</td>
+        <td>{{data["rates"]["THB"]}}</td>
+  </tr>
+    <tr>
+    <td>TRY</td>
+    <td>Türk Lirası</td>
+        <td>{{data["rates"]["TRY"]}}</td>
+  </tr>
+    <tr>
+    <td>USD</td>
+    <td>ABD Doları</td>
+        <td>{{data["rates"]["USD"]}}</td>
+  </tr>
+    <tr>
+    <td>ZAR</td>
+    <td>Güney Afrika Randı</td>
+        <td>{{data["rates"]["ZAR"]}}</td>
+  </tr>
+
+</table>
+
+
+
+</div>
+
+
+
+
+{% endblock %}
